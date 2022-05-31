@@ -5,9 +5,9 @@ RUN apk update && apk add \
     && rm -rf /var/cache/apk/*
 EXPOSE 9050
 COPY torrc.default /etc/tor/torrc.default
-RUN chown -R 1016470000 /etc/tor
+RUN chown -R 1033220000 /etc/tor
 RUN mkdir /.tor
-RUN chown -R 1016470000 /.tor
-USER 1016470000
+RUN chown -R 1033220000 /.tor
+USER 1033220000
 ENTRYPOINT [ "tor" ]
 CMD [ "-f", "/etc/tor/torrc.default" ]
